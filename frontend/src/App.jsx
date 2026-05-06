@@ -1,0 +1,23 @@
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import Landing from './pages/Landing'
+import Login from './pages/Login'
+import Register from './pages/Register'
+import Dashboard from './pages/Dashboard'
+import VideoPage from './pages/VideoPage'
+import Subscribe from './pages/Subscribe'
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/video/:id" element={<VideoPage />} />
+        <Route path="/subscribe" element={<Subscribe />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </BrowserRouter>
+  )
+}
